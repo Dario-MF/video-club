@@ -5,7 +5,7 @@ import HeaderItem from '../molecules/HeaderItem'
 const HeaderCarrousel = ({ filmsHeader }) => {
     const filmsSelect1 = filmsHeader.slice(0, 1)
     const filmsSelect = filmsHeader.slice(1, 3)
-    console.log(filmsSelect1)
+
 
     return (
         <div id="carouselControls" className="carousel slide" data-ride="carousel">
@@ -13,6 +13,7 @@ const HeaderCarrousel = ({ filmsHeader }) => {
                 {
                     filmsSelect1.map(i => (
                         <HeaderItem
+                            key={i.id}
                             title={i.title}
                             description={i.overview}
                             image={i.backdrop_path}
@@ -22,6 +23,7 @@ const HeaderCarrousel = ({ filmsHeader }) => {
                 {
                     filmsSelect.map(i => (
                         <HeaderItem
+                            key={i.id}
                             title={i.title}
                             description={i.overview}
                             image={i.backdrop_path}

@@ -77,3 +77,5 @@ const genres = [
         "name": "Western"
     }
 ]
+
+export default genres
