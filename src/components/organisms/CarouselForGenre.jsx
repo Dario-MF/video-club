@@ -1,60 +1,46 @@
 import React, { useEffect, useState } from 'react'
 import carouselJs from '../hooks/carouselJs'
+import FilmCard from '../molecules/FilmCard'
 
 const CarouselForGenre = ({ id, genre }) => {
     const [films, setFilms] = useState([])
 
     useEffect(() => {
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=10550aae3c031f97d84a3b1c496994f5&language=es&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${id}`)
+            .then(response => response.json())
+            .then(response => {
+                setFilms(response.results)
+            })
         carouselJs()
+        
     }, [])
 
-    console.log(genre)
+   
     return (
-        <div class="peliculas-recomendadas contenedor">
-            <div class="contenedor-titulo-controles">
+        <div className="peliculas-recomendadas contenedor">
+            <div className="contenedor-titulo-controles">
                 <h3>{`Genero: ${genre}`}</h3>
 
             </div>
 
-            <div class="contenedor-principal">
-                <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
+            <div className="contenedor-principal">
+                <button role="button" id="flecha-izquierda" className="flecha-izquierda"><i className="fas fa-angle-left"></i></button>
 
-                <div class="contenedor-carousel">
-                    <div class="carousel">
-                        <div class="pelicula">
-                            <a href="#"><img src="https://picsum.photos/200/300" alt="" /></a>
-                        </div>
-                        <div class="pelicula">
-                            <a href="#"><img src="https://picsum.photos/200/300" alt="" /></a>
-                        </div>
-                        <div class="pelicula">
-                            <a href="#"><img src="https://picsum.photos/200/300" alt="" /></a>
-                        </div>
-                        <div class="pelicula">
-                            <a href="#"><img src="https://picsum.photos/200/300" alt="" /></a>
-                        </div>
-                        <div class="pelicula">
-                            <a href="#"><img src="https://picsum.photos/200/300" alt="" /></a>
-                        </div>
-                        <div class="pelicula">
-                            <a href="#"><img src="https://picsum.photos/200/300" alt="" /></a>
-                        </div>
-                        <div class="pelicula">
-                            <a href="#"><img src="https://picsum.photos/200/300" alt="" /></a>
-                        </div>
-                        <div class="pelicula">
-                            <a href="#"><img src="https://picsum.photos/200/300" alt="" /></a>
-                        </div>
-                        <div class="pelicula">
-                            <a href="#"><img src="https://picsum.photos/200/300" alt="" /></a>
-                        </div>
-                        <div class="pelicula">
-                            <a href="#"><img src="https://picsum.photos/200/300" alt="" /></a>
-                        </div>
+                <div className="contenedor-carousel">
+                    <div className="carousel">
+                        {
+                           films.map(c =>(
+                               <FilmCard 
+                                    key={c.id}
+                                    id={c.id}
+                                    image={c.poster_path}
+                               />
+                           )) 
+                        }
                     </div>
                 </div>
 
-                <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
+                <button role="button" id="flecha-derecha" className="flecha-derecha"><i className="fas fa-angle-right"></i></button>
             </div>
         </div>
     )

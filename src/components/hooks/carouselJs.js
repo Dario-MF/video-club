@@ -9,7 +9,7 @@ const carouselJs = () => {
 
     // ? ----- ----- Event Listener para la flecha derecha. ----- -----
     flechaDerecha.addEventListener('click', () => {
-        fila.scrollLeft += fila.offsetWidth / 5 * 2;
+        fila.scrollLeft += fila.offsetWidth;
 
         /*const indicadorActivo = document.querySelector('.indicadores .activo');
         if (indicadorActivo.nextSibling) {
@@ -20,7 +20,7 @@ const carouselJs = () => {
 
     // ? ----- ----- Event Listener para la flecha izquierda. ----- -----
     flechaIzquierda.addEventListener('click', () => {
-        fila.scrollLeft -= fila.offsetWidth / 5 * 2;
+        fila.scrollLeft -= fila.offsetWidth;
 
         /* const indicadorActivo = document.querySelector('.indicadores .activo');
          if (indicadorActivo.previousSibling) {

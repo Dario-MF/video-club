@@ -3,7 +3,6 @@ import genres from '../../data/genres'
 import CarouselForGenre from './CarouselForGenre'
 
 const CarouselGenres = () => {
-
     return (
         genres.map(g => (
             <CarouselForGenre
@@ -13,13 +12,6 @@ const CarouselGenres = () => {
             />
         ))
     )
-
-
-
-
-
-
-
 }
 
 export default CarouselGenres
