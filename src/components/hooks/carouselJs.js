@@ -1,11 +1,11 @@
 
 
-const carouselJs = () => {
-    const fila = document.querySelector('.contenedor-carousel');
+const carouselJs = (id) => {
+    const fila = document.getElementById(`move${id}`);
     const peliculas = document.querySelectorAll('.pelicula');
 
-    const flechaIzquierda = document.getElementById('flecha-izquierda');
-    const flechaDerecha = document.getElementById('flecha-derecha');
+    const flechaIzquierda = document.getElementById(`flecha-izquierda${id}`);
+    const flechaDerecha = document.getElementById(`flecha-derecha${id}`);
 
     // ? ----- ----- Event Listener para la flecha derecha. ----- -----
     flechaDerecha.addEventListener('click', () => {

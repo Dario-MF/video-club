@@ -11,7 +11,7 @@ const CarouselForGenre = ({ id, genre }) => {
             .then(response => {
                 setFilms(response.results)
             })
-        carouselJs()
+        carouselJs(id)
         
     }, [])
 
@@ -24,9 +24,9 @@ const CarouselForGenre = ({ id, genre }) => {
             </div>
 
             <div className="contenedor-principal">
-                <button role="button" id="flecha-izquierda" className="flecha-izquierda"><i className="fas fa-angle-left"></i></button>
+                <button role="button" id={`flecha-izquierda${id}`} className="flecha-izquierda"><i className="fas fa-angle-left"></i></button>
 
-                <div className="contenedor-carousel">
+                <div className={`contenedor-carousel`} id={`move${id}`}>
                     <div className="carousel">
                         {
                            films.map(c =>(
@@ -40,7 +40,7 @@ const CarouselForGenre = ({ id, genre }) => {
                     </div>
                 </div>
 
-                <button role="button" id="flecha-derecha" className="flecha-derecha"><i className="fas fa-angle-right"></i></button>
+                <button role="button" id={`flecha-derecha${id}`} className="flecha-derecha"><i className="fas fa-angle-right"></i></button>
             </div>
         </div>
     )
