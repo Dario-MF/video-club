@@ -1,44 +1,32 @@
 import React, { useEffect, useState } from 'react'
 import HeaderItem from '../molecules/HeaderItem'
+import carouselJs from '../hooks/carouselJs'
 
 const HeaderCarrousel = ({ filmsHeader }) => {
-    const filmsSelect1 = filmsHeader.slice(0, 1)
-    const filmsSelect = filmsHeader.slice(1, 3)
+   
+    const filmsSelect = filmsHeader.slice(0, 3)
 
+    useEffect(()=>{
+        carouselJs('')
+    },[])
 
     return (
-        <div id="carouselControls" className="carousel slide" data-ride="carousel">
-            <div className="carousel-inner">
-                {
-                    filmsSelect1.map(i => (
-                        <HeaderItem
-                            key={i.id}
-                            title={i.title}
-                            description={i.overview}
-                            image={i.backdrop_path}
-                            active='active'
-                        />
-                    ))}
-                {
+        <div id="carouselControls" className="carousel-header">
+            <button role="button" id={`flecha-izquierda`} className="flecha-izquierda"><i className="fas fa-angle-left"></i></button>
+            <div className="carousel-inner" id={`move`}>
+                <div className="carousel">
+                    {
                     filmsSelect.map(i => (
                         <HeaderItem
                             key={i.id}
                             title={i.title}
                             description={i.overview}
                             image={i.backdrop_path}
-                            active=''
                         />
                     ))}
-
+                </div>  
             </div>
-            <a className="carousel-control-prev" type="button" href="#carouselControls" data-bs-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-
-            </a>
-            <a className="carousel-control-next" type="button" href="#carouselControls" data-bs-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-
-            </a>
+            <button role="button" id={`flecha-derecha`} className="flecha-derecha"><i className="fas fa-angle-right"></i></button> 
         </div>
     )
 }

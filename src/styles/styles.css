@@ -18,113 +18,124 @@ body {
 	width: 90%;
 	margin: auto;
 }
+/* ---- ----- ----- navBar ----- ----- ----- */
 
-header {
-	padding: 30px 0;
+.navigation{
+
 }
-
-header .contenedor {
+.navbar{
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-}
-
-header .logotipo {
-	font-family: 'Bebas Neue', cursive;
-	font-weight: normal;
-	color: var(--rojo);
-	font-size: 40px;
-}
-
-header nav a {
-	color: #AAA;
-	text-decoration: none;
-	margin-right: 20px;
-}
-
-header nav a:hover,
-header nav a.activo {
-	color: #FFF;
-}
-
-/* ---- ----- ----- Pelicula Principal ----- ----- ----- */
-
-.carousel{
-	margin-bottom: 3em;
+	padding: .5em 3em;
 	
-}
-.carousel-item img {
-	display:block;
-	margin:auto;
-	margin-bottom: 3em;
-	filter: brightness(50%);
-	width: 100%;
-	height: 40.62em;
-	border: none;
-}
 
-.pelicula-principal {
-	font-size: 16px;
-	min-height: 40.62em;
-	color: #fff;
-	background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0, 0, 0, 0.651) 100%), url('#');
-	background-position: center center;
-	background-size: cover;
-	margin-bottom: 3.12em;
+}
+.navbar-brand{
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 }
-
-.pelicula-principal .contenedor {
-	margin: 0 auto;
-	margin-bottom: 6.25em;
-}
-.carousel-caption{
-	margin-bottom: 1em;
-	width: 70%;
-	height: 40%;
+.navbar-brand a{
 	
 }
-.titulo-header {
-	font-weight: 600;
-	font-size: 2em;
-	margin-bottom: 0.2em;
+.search-bar{
+
+}
+.search-input{
+
+}
+.search-button{
+
 }
 
-.descripcion-header {
-	font-weight: normal;
-	font-size: .8em;
+
+
+/* ---- ----- ----- Header Principal ----- ----- ----- */
+.carousel-header{
+	margin-bottom: 70px;
+	overflow: hidden;
+}
+
+.carousel-header .carousel-inner{
+	min-width: 100vw;
+	overflow: hidden;	
+}
+
+.carousel-header .carousel-inner .carousel{
+	
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.carousel-header .carousel-inner .carousel-header-item{
+	min-width: 100vw;
+	
+	position:relative;
+
+}
+.carousel-header .carousel-inner .carousel-header-item img{
+	vertical-align: top;
+	margin: 0;
+	width: 100vw;
+	height: 60vh;
+	filter: brightness(.6);
+	
+}
+
+.header-caption{
+	position:absolute;
+	z-index: 500;
+	top: 55%;
+	left: 10%;
+	color: #fff;
 	line-height: 1.6em;
-	max-width: 50%;
+	max-width: 45%;
 	margin-bottom: 1.25em;
 	overflow: hidden;
 	display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 	
-	
+}
+.header-caption .header-title{
+	margin-bottom: .5em;
 }
 
-.pelicula-principal .boton {
-	background: rgba(0,0,0, 0.5);
+
+
+
+/*---------------flechas header-----------------*/
+.carousel-header .flecha-derecha, 
+.carousel-header .flecha-izquierda{
+	position: absolute;
 	border: none;
-	border-radius: 0.31em;
-	padding: 0.93em 1.87em;
+	background: rgba(0, 0, 0, 0.178);
+	font-size: 40px;
+	height: 50%;
+	top: 15%;
+	line-height: 40px;
+	width: 50px;
 	color: #fff;
-	margin-right: 1.25em;
 	cursor: pointer;
-	transition: .3s ease all;
-	font-size: 1.12em;
+	z-index: 500;
+	transition: .2s ease all;
+
 }
 
-.pelicula-principal .boton:hover {
-	background: #fff;
-	color: #000;
+.carousel-header .flecha-derecha{
+	right: 0;
+}
+.carousel-header .flecha-izquierda{
+	left: 0;
 }
 
-.pelicula-principal .boton i {
-	margin-right: 1.25em;
+.carousel-header .flecha-derecha:hover, 
+.carousel-header .flecha-izquierda:hover{
+	background: rgba(0,0,0, .5);
+
 }
+
 
 /* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
 .contenedor-titulo-controles {
@@ -138,19 +149,6 @@ header nav a.activo {
 	font-size: 30px;
 }
 
-.contenedor-titulo-controles .indicadores button {
-	background: #fff;
-	height: 3px;
-	width: 10px;
-	cursor: pointer;
-	border: none;
-	margin-right: 2px;
-}
-
-.contenedor-titulo-controles .indicadores button:hover,
-.contenedor-titulo-controles .indicadores button.activo {
-	background: red;
-}
 
 
 /* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
@@ -202,13 +200,14 @@ header nav a.activo {
 }
 
 .peliculas-recomendadas .contenedor-carousel .carousel {
+	width: 100%;
 	display: flex;
 	flex-wrap: nowrap;
 }
 
 .peliculas-recomendadas .contenedor-carousel .carousel .pelicula {
-	min-width: 20%;
-	margin-right: .1em;
+	min-width: calc( 20% - .2em);
+	margin-right: .2em;
 	transition: .3s ease all;
 	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
 }

@@ -4,12 +4,10 @@ import SearchBar from '../molecules/SearchBar'
 
 
 const Header = () => (
-    <div role="navigation">
-        <nav className="navbar " style={{  }}>
-            <div className="container-fluid">
+    <div className="navigation">
+        <nav className="navbar ">   
                 <BrandLink />
                 <SearchBar />
-            </div>
         </nav>
     </div>
 )

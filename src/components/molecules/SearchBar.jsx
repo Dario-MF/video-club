@@ -2,9 +2,9 @@ import React from 'react'
 
 
 const SearchBar =() =>(
-    <form className="d-flex">
-        <input className="form-control mr-4" type="search" placeholder="Buscar" aria-label="Search" />
-        <button className="btn btn-outline-danger" type="submit">Buscar</button>
+    <form className="search-bar">
+        <input className="search-input" type="search" placeholder="Buscar" />
+        <button className="search-button" type="submit">Buscar</button>
     </form>
 )
 
