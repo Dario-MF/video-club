@@ -2,12 +2,14 @@ import React from 'react'
 import Template from './templates/Template'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
+import Film from './pages/Film'
 
 const App = () => (
   <Router>
     <Template />
-    <Switch>
-      <Route path="/"><Home /></Route>
+    <Switch> 
+      <Route path='/:id'component={Film} />
+      <Route path="/" exact component={Home} />
 
       <Route component={() => (
         <>

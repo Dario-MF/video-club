@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const FilmCard = ({id, image})=>{
+const FilmCard = ({film})=>{
     return(
         <div className="pelicula">
-            <a href="#"><img src={`https://image.tmdb.org/t/p/w300${image}`} alt="" /></a>
+            <Link to={`/${String(film.id)}`}><img src={`https://image.tmdb.org/t/p/w300${film.poster_path}`} alt="" /></Link>
         </div>
     )
 }

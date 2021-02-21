@@ -32,8 +32,7 @@ const CarouselForGenre = ({ id, genre }) => {
                            films.map(c =>(
                                <FilmCard 
                                     key={c.id}
-                                    id={c.id}
-                                    image={c.poster_path}
+                                    film={c}
                                />
                            )) 
                         }
