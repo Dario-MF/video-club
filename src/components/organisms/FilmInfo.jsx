@@ -29,7 +29,7 @@ const FilmInfo = ({film, video})=>{
                     <h2>Ver trailer</h2>
                     <div className="video-responsive">
                         <iframe 
-                            src={`https://www.youtube.com/embed/${video}`} 
+                            src={`https://www.youtube.com/embed/${video.results[0].key}`} 
                             frameBorder="0"
                             allowFullScreen="allowfullscreen">
                         </iframe>

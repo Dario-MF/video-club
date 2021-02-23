@@ -1,27 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import FilmInfo from '../organisms/FilmInfo'
+import useFetch from '../customHooks/useFetch'
+import Api from '../../data/dataApi'
 
 const Film = ({match})=>{
-    const [film, setFilm]= useState([])
-    const [video, setVideo]= useState('')
-
-
-    useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=10550aae3c031f97d84a3b1c496994f5&language=es&include_video=true`)
-            .then(response => response.json())
-            .then(response => {
-                setFilm(response)
-            })
-        fetch(`https://api.themoviedb.org/3/movie/${match.params.id}/videos?api_key=10550aae3c031f97d84a3b1c496994f5&language=en-US`)
-            .then(response => response.json())
-            .then(response => {
-                 setVideo(response.results[0].key)  
-            })
-    }, [])
-
-
-    return (<FilmInfo film={film} films={'hola'} video={video}/>)
     
+    const film = useFetch(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=${Api.apiKey}&language=es&include_video=true`, [])
+    const video = useFetch(`https://api.themoviedb.org/3/movie/${match.params.id}/videos?api_key=${Api.apiKey}&language=en-US`, [])
+   
+
+    return (<FilmInfo film={film.data} films={'hola'} video={video.data}/>)    
 }
     
 

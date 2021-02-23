@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import HeaderItem from '../molecules/HeaderItem'
-import carouselJs from '../hooks/carouselJs'
+import carouselJs from '../customHooks/carouselJs'
 
 const HeaderCarrousel = ({ filmsHeader }) => {
    

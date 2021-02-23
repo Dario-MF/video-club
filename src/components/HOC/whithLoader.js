@@ -10,7 +10,7 @@ const whithLoader = (data)=>(WrappedComponent) => {
             this.state = {}
         }
         
-        render(){console.log(this.props[data])
+        render(){
             return(
                 this.props[data].length === 0
                     ? <div className="box-loading">
