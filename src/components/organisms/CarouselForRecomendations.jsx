@@ -1,21 +1,15 @@
-import React, {useEffect}from 'react'
-import carouselJs from '../customHooks/carouselJs'
+import React, {useEffect} from 'react'
+import whithLoader from '../HOC/withLoader'
 import FilmCard from '../molecules/FilmCard'
-import useFetch from '../customHooks/useFetch'
-import Api from '../../data/dataApi'
-import withLoader from '../HOC/withLoader'
+import carouselJs from '../customHooks/carouselJs'
 
+const CarouselForRecomendations = ({films, id}) => {
+    useEffect(()=>carouselJs(id),[])  
 
-const CarouselForGenre = ({ id, genre }) => {
-    
-    const films = useFetch(`https://api.themoviedb.org/3/discover/movie?api_key=${Api.apiKey}&language=es&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${id}`, [])
-
-    useEffect(()=>carouselJs(id),[])     
-       
     return (
         <div className="peliculas-recomendadas contenedor">
             <div className="contenedor-titulo-controles">
-                <h3>{`Genero: ${genre}`}</h3>
+                <h3>{`Genero: Recomendadas`}</h3>
 
             </div>
 
@@ -24,15 +18,14 @@ const CarouselForGenre = ({ id, genre }) => {
 
                 <div className={`contenedor-carousel`} id={`move${id}`}>
                     <div className="carousel">
-                        {films.data.length === 0
-                            ? <h1>Cargando...</h1>
-                            :   films.data.results.map(c =>(
+                        
+                               {films.results.map(c =>(
                                     <FilmCard 
                                             key={c.id}
                                             film={c}
                                     />
-                                )) 
-                        }
+                                )) }
+                        
                     </div>
                 </div>
 
@@ -42,4 +35,4 @@ const CarouselForGenre = ({ id, genre }) => {
     )
 }
 
-export default withLoader('genre')( CarouselForGenre)
+export default whithLoader('films')(CarouselForRecomendations) 

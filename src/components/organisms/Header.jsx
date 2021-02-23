@@ -1,25 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import HeaderCarrousel from '../molecules/HeaderCarrousel'
+import useFetch from '../customHooks/useFetch'
+import Api from '../../data/dataApi'
 
 
 
 const Header = () => {
-    const [filmsHeader, setFilmsHeader] = useState([])
-
-    useEffect(() => {
-        fetch('https://api.themoviedb.org/3/discover/movie?api_key=10550aae3c031f97d84a3b1c496994f5&language=es&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=28')
-            .then(response => response.json())
-            .then(response => {
-                setFilmsHeader(response.results)
-            })
-    }, [])
-
-    return <HeaderCarrousel filmsHeader={filmsHeader} />
-
+    
+    const filmsHeader = useFetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${Api.apiKey}&language=es`, [])
+     
+    return <HeaderCarrousel filmsHeader={filmsHeader.data} />
 }
-
-
-
 
 
 export default Header

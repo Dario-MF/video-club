@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import HeaderItem from '../molecules/HeaderItem'
 import carouselJs from '../customHooks/carouselJs'
+import WithLoader from '../HOC/withLoader'
 
 const HeaderCarrousel = ({ filmsHeader }) => {
    
-    const filmsSelect = filmsHeader.slice(0, 3)
-
+    const filmsSelect = filmsHeader.results.slice(0, 3)
+    
     useEffect(()=>{
         carouselJs('')
     },[])
@@ -19,6 +20,7 @@ const HeaderCarrousel = ({ filmsHeader }) => {
                     filmsSelect.map(i => (
                         <HeaderItem
                             key={i.id}
+                            id={i.id}
                             title={i.title}
                             description={i.overview}
                             image={i.backdrop_path}
@@ -31,4 +33,4 @@ const HeaderCarrousel = ({ filmsHeader }) => {
     )
 }
 
-export default HeaderCarrousel
+export default WithLoader('filmsHeader')( HeaderCarrousel)

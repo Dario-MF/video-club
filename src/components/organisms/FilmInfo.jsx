@@ -1,11 +1,8 @@
 import React from 'react'
-import whithLoader from '../HOC/whithLoader';
+import withLoader from '../HOC/withLoader';
 
-const FilmInfo = ({film, video})=>{
-    
-    
-        return (
-            <>
+const FilmInfo = ({film})=>{
+        return (       
                 <div className='info-film'>
                     <div className="box-img">
                         <img src={`https://image.tmdb.org/t/p/w300${film.poster_path}`} alt={film.title}/>
@@ -25,22 +22,7 @@ const FilmInfo = ({film, video})=>{
                         <p className="info-description vote-average">Puntuacion TmDb: <span>{film.vote_average}</span></p>
                     </div>
                 </div>
-                <div className="box-video">
-                    <h2>Ver trailer</h2>
-                    <div className="video-responsive">
-                        <iframe 
-                            src={`https://www.youtube.com/embed/${video.results[0].key}`} 
-                            frameBorder="0"
-                            allowFullScreen="allowfullscreen">
-                        </iframe>
-                    </div>
-                </div>
-            </>
-            
         )
-    
-   
-    
 }
 
-export default whithLoader('film')(FilmInfo)
+export default withLoader('film')(FilmInfo)

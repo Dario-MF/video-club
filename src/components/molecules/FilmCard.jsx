@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import whithLoader from '../HOC/whithLoader'
+import withLoader from '../HOC/withLoader'
 
 const FilmCard = ({film})=>{
     return(
@@ -10,4 +10,4 @@ const FilmCard = ({film})=>{
     )
 }
 
-export default whithLoader('film')(FilmCard)
+export default withLoader('film')(FilmCard)

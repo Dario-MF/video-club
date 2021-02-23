@@ -21,7 +21,7 @@ const useFetch = (url, initialState, options) => {
 
     useEffect(() => {
         getData()
-    }, [])
+    }, [url])
 
     return {
         data,
