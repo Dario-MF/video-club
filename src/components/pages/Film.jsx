@@ -20,7 +20,7 @@ const Film = ({match})=>{
     }, [])
 
 
-    return (<FilmInfo film={film} video={video}/>)
+    return (<FilmInfo film={film} films={'hola'} video={video}/>)
     
 }
     

@@ -1,29 +1,26 @@
 import React from 'react'
+import whithLoader from '../HOC/whithLoader';
 
 const FilmInfo = ({film, video})=>{
     
-   
-   
-    if (!film.title) {
-        return <span>Loading...</span>;
-    }else{
+    
         return (
             <>
-                <div className='info-film' style={{color: 'white'}}>
+                <div className='info-film'>
                     <div className="box-img">
                         <img src={`https://image.tmdb.org/t/p/w300${film.poster_path}`} alt={film.title}/>
                     </div>
                     <div className="box-info">
                         <h2 className='info-title'>{film.title}</h2>
-                        <p className="info-description">{`${film.tagline}`}</p>
+                        <p className="info-description"><cite>{`${film.tagline}`}</cite></p>
                         <p className="info-description">{film.overview}</p>
-                        <p className="info-description">{
-                            `Genero: ${film.genres[0].name}, ${film.genres[1].name}`
+                        <p className="info-description">
+                           <span>Genero: </span>{` ${film.genres.map(g => ' ' + g.name)}.`
                         }</p>
                         
-                        <p className="info-description">{`Fecha de estreno: ${film.release_date}`}</p>
-                        <p className="info-description">{
-                            `Producida: ${film.production_companies[0].name}`
+                        <p className="info-description"><span>Fecha de estreno:</span>{` ${film.release_date}`}</p>
+                        <p className="info-description">
+                            <span>Producida:</span>{ `${film.production_companies.map(p => ' ' + p.name)}.`
                         }</p>
                         <p className="info-description vote-average">Puntuacion TmDb: <span>{film.vote_average}</span></p>
                     </div>
@@ -41,9 +38,9 @@ const FilmInfo = ({film, video})=>{
             </>
             
         )
-    }
+    
    
     
 }
 
-export default FilmInfo
+export default whithLoader('film')(FilmInfo)

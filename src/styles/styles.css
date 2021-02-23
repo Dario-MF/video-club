@@ -1,6 +1,7 @@
 :root {
-	--rojo: #E50914;
+	--rojo: #c90b15;
 	--fondo: #1b1b1b;
+	--font-color: rgb(231, 231, 231);
 }
 
 * {
@@ -38,7 +39,7 @@ body {
 .navbar-brand{
 	display: flex;
 	align-items: center;
-	color: #fff;
+	color:var(--font-color);
 	text-decoration: none;
 	font-size: 1.5em;
 	font-weight: bold;
@@ -50,7 +51,7 @@ body {
 
 
 .search-input{
-	color: #fff;
+	color: var(--font-color);
 	margin-right: .6em;
 	padding: .5em;
 	border: 1px solid rgb(0, 0, 0);
@@ -59,10 +60,10 @@ body {
 	outline: 0;
 }
 .search-button{
-	color: #fff;
+	color:var(--font-color);
 	cursor: pointer;
 	padding: .5em;
-	border:1px solid #E50914 ;
+	border:1px solid var(--rojo);
 	background-color: rgba(0, 0, 0, 0.295);
 	border-radius: 5px;
 }
@@ -106,7 +107,7 @@ body {
 	z-index: 500;
 	top: 70%;
 	left: 10%;
-	color: #fff;
+	color: var(--font-color);
 	line-height: 1.6em;
 	max-width: 45%;
 	margin-bottom: 1.25em;
@@ -134,7 +135,7 @@ body {
 	top: 15%;
 	line-height: 40px;
 	width: 50px;
-	color: #fff;
+	color:var(--font-color);
 	cursor: pointer;
 	z-index: 500;
 	transition: .3s ease all;
@@ -164,7 +165,7 @@ body {
 }
 
 .contenedor-titulo-controles h3 {
-	color: #fff;
+	color: var(--font-color);
 	font-size: 30px;
 }
 
@@ -191,7 +192,7 @@ body {
 	top: calc(50% - 30%);
 	line-height: 40px;
 	width: 50px;
-	color: #fff;
+	color:var(--font-color);
 	cursor: pointer;
 	z-index: 500;
 	transition: .2s ease all;
@@ -246,6 +247,7 @@ body {
 /* ---- ----- ----- Film info ----- ----- ----- */
 
 .info-film{
+	color: var(--font-color);
 	display: flex;
 	margin: auto 3em;
 }
@@ -265,7 +267,7 @@ body {
 	flex-direction: column;
 }
 .info-title{
-	border-bottom: 1px solid rgb(190, 17, 17);
+	border-bottom: 1px solid var(--rojo);
 	margin-bottom: 1em;
 }
 .info-description{
@@ -273,8 +275,12 @@ body {
 	margin-bottom: 1em;
 	padding-bottom: .4em;
 }
+.info-description span{
+	font-size: 1.2em;
+	font-weight: bold;
+}
 .vote-average span{
-	color: rgb(190, 17, 17);
+	color: var(--rojo);
 }
 
 
@@ -286,7 +292,7 @@ body {
 }
 .box-video h2{
 	margin-bottom: 1em;
-	border-bottom: 1px solid rgb(190, 17, 17);
+	border-bottom: 1px solid var(--rojo);
 }
 
 .video-responsive {
@@ -304,4 +310,14 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+
+.box-loading{
+	width: 100%;
+	padding-top: 5em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
 }
