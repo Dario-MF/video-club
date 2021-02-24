@@ -21,9 +21,11 @@ SPA con acceso a información//tráiler de películas.
 En el proyecto se usaron las tecnologías:
 - React.js | customHooks | HOC
 - React-Router
+- JavaScript ES6
+- Fetch (API-TmDb)
 - Html
 - CSS
-- JavaScript ES6
+
 
 ## Licencia
 MIT License
