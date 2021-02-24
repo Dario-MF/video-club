@@ -22,7 +22,9 @@ body {
 /* ---- ----- ----- navBar ----- ----- ----- */
 
 .navigation{
-	position: absolute;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
 	z-index: 600;
 	width: 100%;
 
@@ -55,7 +57,7 @@ body {
 	margin-right: .6em;
 	padding: .5em;
 	border: 1px solid rgb(0, 0, 0);
-	background-color: rgb(26, 25, 25);
+	background-color: rgb(39, 39, 39);
 	border-radius: 5px;
 	outline: 0;
 }
@@ -71,8 +73,10 @@ body {
 
 
 /* ---- ----- ----- Header Principal ----- ----- ----- */
+
 .carousel-header{
 	position: relative;
+	top: -60px;
 	margin-bottom: 70px;
 	overflow: hidden;
 }
@@ -90,8 +94,6 @@ body {
 .carousel-header .carousel-inner .carousel-header-item{
 	min-width: 100vw;	
 	position:relative;
-	
-
 }
 .carousel-header .carousel-inner .carousel-header-item img{
 	vertical-align: top;
