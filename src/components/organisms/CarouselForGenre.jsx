@@ -4,6 +4,8 @@ import FilmCard from '../molecules/FilmCard'
 import useFetch from '../customHooks/useFetch'
 import Api from '../../data/dataApi'
 import withLoader from '../HOC/withLoader'
+import { Link } from 'react-router-dom'
+
 
 
 const CarouselForGenre = ({ id, genre }) => {
@@ -15,7 +17,7 @@ const CarouselForGenre = ({ id, genre }) => {
     return (
         <div className="peliculas-recomendadas contenedor">
             <div className="contenedor-titulo-controles">
-                <h3>{`Genero: ${genre}`}</h3>
+               <Link to={`/genre/${genre}`}><h3>{`Genero ${genre}`}</h3></Link> 
 
             </div>
 

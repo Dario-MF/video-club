@@ -12,7 +12,7 @@
 
 body {
 	background: var(--fondo);
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .contenedor {
@@ -163,18 +163,23 @@ body {
 	justify-content: space-between;
 	align-items: flex-end;
 	border-bottom: 1px solid var(--rojo);
+	
 }
 
 .contenedor-titulo-controles h3 {
 	color: var(--font-color);
-	font-size: 30px;
+	font-size: 1.5em;
+}
+
+.contenedor-titulo-controles a{
+	text-decoration: none;
 }
 
 
 
 /* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
 .peliculas-recomendadas {
-	margin-bottom: 70px;
+	margin-bottom: 50px;
 }
 
 .peliculas-recomendadas .contenedor-principal {
@@ -279,6 +284,13 @@ body {
 .info-description span{
 	font-size: 1.2em;
 	font-weight: bold;
+}
+.info-description a{
+	color: var(--font-color);
+	text-decoration: none;
+}
+.info-description a:hover{
+	color: rgb(204, 90, 90);
 }
 .vote-average span{
 	color: var(--rojo);

@@ -3,12 +3,12 @@ import whithLoader from '../HOC/withLoader'
 import SearchCard from '../molecules/SearchCard'
 
 
-const SearchGrid = ({wordsSearch, searchFilms}) => {
+const SearchGrid = ({title, searchFilms}) => {
 
    
     return (
         <div className="search-box">
-            <h2 className="search-title">{`Resultados para: ${wordsSearch}`}</h2>
+            <h2 className="search-title">{title}</h2>
             <div className="search-grid">
                 {
                     searchFilms.results.map(f => (

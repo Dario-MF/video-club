@@ -9,7 +9,7 @@ const CarouselForRecomendations = ({films, id}) => {
     return (
         <div className="peliculas-recomendadas contenedor">
             <div className="contenedor-titulo-controles">
-                <h3>{`Genero: Recomendadas`}</h3>
+                <h3>{`Películas relacionadas`}</h3>
 
             </div>
 

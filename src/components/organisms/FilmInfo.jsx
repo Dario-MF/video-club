@@ -1,7 +1,11 @@
 import React from 'react'
 import withLoader from '../HOC/withLoader';
+import { Link } from 'react-router-dom'
+
 
 const FilmInfo = ({film})=>{
+
+
         return (       
                 <div className='info-film'>
                     <div className="box-img">
@@ -12,8 +16,11 @@ const FilmInfo = ({film})=>{
                         <p className="info-description"><cite>{`${film.tagline}`}</cite></p>
                         <p className="info-description">{film.overview}</p>
                         <p className="info-description">
-                           <span>Genero: </span>{` ${film.genres.map(g => ' ' + g.name)}.`
-                        }</p>
+                           <span>Genero: </span>{film.genres.map(g => (
+                                <Link to={`/genre/${g.name}`} key={g.id}>{g.name}, </Link>
+                                
+                                ))} 
+                        </p>
                         
                         <p className="info-description"><span>Fecha de estreno:</span>{` ${film.release_date}`}</p>
                         <p className="info-description">
