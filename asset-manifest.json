@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/video-club/static/css/main.d3bf6cb9.chunk.css",
+    "main.js": "/video-club/static/js/main.7d20e73c.chunk.js",
+    "main.js.map": "/video-club/static/js/main.7d20e73c.chunk.js.map",
+    "runtime-main.js": "/video-club/static/js/runtime-main.bd9d4bd5.js",
+    "runtime-main.js.map": "/video-club/static/js/runtime-main.bd9d4bd5.js.map",
+    "static/js/2.dd40f4fd.chunk.js": "/video-club/static/js/2.dd40f4fd.chunk.js",
+    "static/js/2.dd40f4fd.chunk.js.map": "/video-club/static/js/2.dd40f4fd.chunk.js.map",
+    "index.html": "/video-club/index.html",
+    "static/css/main.d3bf6cb9.chunk.css.map": "/video-club/static/css/main.d3bf6cb9.chunk.css.map",
+    "static/js/2.dd40f4fd.chunk.js.LICENSE.txt": "/video-club/static/js/2.dd40f4fd.chunk.js.LICENSE.txt",
+    "static/media/logo.094fae12.svg": "/video-club/static/media/logo.094fae12.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bd9d4bd5.js",
+    "static/js/2.dd40f4fd.chunk.js",
+    "static/css/main.d3bf6cb9.chunk.css",
+    "static/js/main.7d20e73c.chunk.js"
+  ]
+}
