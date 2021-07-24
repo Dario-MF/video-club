@@ -4,16 +4,16 @@ import Header from '../organisms/Header'
 import CarouselGenres from '../organisms/CarouselGenres'
 
 
-const Home = () => (
-    <>
-        <NavBar />
-        <Header />
-        <CarouselGenres />
-    </>
-)
-
-
-
+const Home = () => {
+    
+    return (
+        <>
+            <NavBar />
+            <Header />
+            <CarouselGenres />
+        </>  
+    )
+}
 
 
 

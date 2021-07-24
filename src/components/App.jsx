@@ -9,9 +9,9 @@ import '../styles/styles.css';
 const App = () => (
   <Router>
     <Switch> 
-      <Route exact path="/search/:search_word" component={SearchPage} />
-      <Route exact path="/genre/:genre_id" component={GenrePage} />
-      <Route exact path='/film/:id'component={Film} />
+      <Route path="/search/:search_word" component={SearchPage} />
+      <Route path="/genre/:genre_id" component={GenrePage} />
+      <Route path='/film/:id'component={Film} />
       <Route path="/"  component={Home} />
       
       <Route component={() => (
