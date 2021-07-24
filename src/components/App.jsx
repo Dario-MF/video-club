@@ -1,9 +1,10 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Home from './pages/Home'
-import Film from './pages/Film'
-import SearchPage from './pages/SearchPage'
-import GenrePage from './pages/GenrePage'
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
+import Film from './pages/Film';
+import SearchPage from './pages/SearchPage';
+import GenrePage from './pages/GenrePage';
+import '../styles/styles.css';
 
 const App = () => (
   <Router>
@@ -22,9 +23,6 @@ const App = () => (
     </Switch>
   </Router>
 )
-
-/*<Route path="/" exact component={} />*/
-
 
 
 
