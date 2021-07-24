@@ -11,8 +11,8 @@ const App = () => (
     <Switch> 
       <Route exact path="/search/:search_word" component={SearchPage} />
       <Route exact path="/genre/:genre_id" component={GenrePage} />
-      <Route exact path='/:id'component={Film} />
-      <Route exact path="/"  component={Home} />
+      <Route exact path='/film/:id'component={Film} />
+      <Route path="/"  component={Home} />
       
       <Route component={() => (
         <>

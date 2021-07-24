@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const HeaderItem = ({ id, title, description, image }) => (
     <div className={`carousel-header-item`}>
 
-        <Link to={`/${String(id)}`}>
+        <Link to={`/film/${String(id)}`}>
             <img src={`https://image.tmdb.org/t/p/w500${image}`} className="header-img" alt={`imagen pelicula ${title}`} />
         </Link>
         
